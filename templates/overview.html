@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="page-header">
+  <h2>Your projects:</h2>
+  {% for proj in projects %}
+    <ul>
+      <li style="list-style-type:none"><a href="{{ url_for('mock_analysis') }}">{{ proj }}</a></li>
+    </ul>
+  {% endfor %}
+</div>
+{% endblock %}
