@@ -66,5 +66,18 @@ $(function () {
 {% endblock %}
 
 {% block page_content %}
-<div id="chart" style="min-width: 310px; height: 450px; margin: 20 auto"></div>
+<div id="chart" style="min-width: 310px; height: 450px; margin: 20 auto"></div></br></br>
+<table border="1" style="width:100%">
+  <tr>
+    <th>Taxonomy</th>
+    {% for item in categories %}
+    <th align="right">{{ item }}</th>
+    {% endfor %}
+  </tr>
+  <tr>
+  {% for row in series %}
+  <td></td>
+  {% endfor %}
+  </tr>
+</table>
 {% endblock %}
