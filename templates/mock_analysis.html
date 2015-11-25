@@ -10,6 +10,8 @@ $(function () {
       marginBottom: 20,
       spacingBottom: 40
     },
+    credits: {enabled: false
+    },
     title: {
       text: 'Taxonomic composition'
     },
@@ -66,12 +68,12 @@ $(function () {
 {% endblock %}
 
 {% block page_content %}
-<div id="chart" style="min-width: 310px; height: 450px; margin: 20 auto"></div></br></br>
+<div id="chart" style="min-width: 200px; height: 450px; margin: 20 auto"></div></br></br>
 <table border="1" style="width:100%">
   <tr>
     <th>Taxonomy</th>
     {% for item in categories %}
-    <th align="right">{{ item }}</th>
+    <th align="center">{{ item }}</th>
     {% endfor %}
   </tr>
   <tr>
