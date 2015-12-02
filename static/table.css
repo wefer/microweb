@@ -3,9 +3,10 @@ table.tablesorter {
 	background-color: #F2F2F2;
 	width: 1024px;
 	border: 1px solid #000;
+	margin: 0 auto;
 }
 table.tablesorter th {
-	text-align: left;
+	text-align: center;
 	padding: 5px;
 	background-color: #71B271;
 }

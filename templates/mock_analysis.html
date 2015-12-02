@@ -62,7 +62,7 @@ $(function () {
         }
       }
     },
-    series: {{ series|safe }}
+    series: {{ series_json|safe }}
   });
 });
 
@@ -76,26 +76,26 @@ $(function () {
   <tr>
     <th>Taxonomy</th>
     {% for item in categories %}
-      <th align="center">{{ item }}</th>
+      <th>{{ item }}</th>
     {% endfor %}
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>1</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>1</td>
-  </tr>
+  {% for item in rows %}
+    <tr>
+      <td>{{ item['name'] }}</td>
+      {% for val in item['data'] %}
+      <td>{{ val }}</td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
   </tbody>
 </table>
 
 <script>
   $(document).ready(function()
     {
-      $("#myTable").tablesorter();
+      $("#myTable").tablesorter( {sortList: [[0,0], [1,0]]} );
     });
 </script>
 
