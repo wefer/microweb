@@ -2,6 +2,8 @@
 
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table.css') }}">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.24.6/js/jquery.tablesorter.js"></script>
 <script>
 $(function () {
   $('#chart').highcharts({
@@ -69,17 +71,32 @@ $(function () {
 
 {% block page_content %}
 <div id="chart" style="min-width: 200px; height: 450px; margin: 20 auto"></div></br></br>
-<table border="1" style="width:100%">
+<table id="myTable" class="tablesorter">
+  <thead>
   <tr>
     <th>Taxonomy</th>
     {% for item in categories %}
-    <th align="center">{{ item }}</th>
+      <th align="center">{{ item }}</th>
     {% endfor %}
   </tr>
+  </thead>
+  <tbody>
   <tr>
-  {% for row in series %}
-  <td></td>
-  {% endfor %}
+    <td>1</td>
+    <td>2</td>
   </tr>
+  <tr>
+    <td>2</td>
+    <td>1</td>
+  </tr>
+  </tbody>
 </table>
+
+<script>
+  $(document).ready(function()
+    {
+      $("#myTable").tablesorter();
+    });
+</script>
+
 {% endblock %}
