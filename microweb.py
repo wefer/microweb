@@ -54,9 +54,7 @@ def mock_analysis():
 		obj = {'name': key, 'data' : value}
 		series.append(obj)
 
-
 	categories = list(df.columns)
-	print series
 
 	return render_template('mock_analysis.html', rows=series, series_json=json.dumps(series), categories=categories)
 
